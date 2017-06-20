@@ -1,0 +1,22 @@
+table {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: burlywood;
+  box-shadow: 3px 3px 3px #333333;
+}
+
+body {
+  background-color: beige;
+  color: #2E0000;
+  font-family: Verdana, Arial, Helvetica, sns-serif;
+}
+
+.button {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 1em;
+}
+header {
+  text-align: center;
+}

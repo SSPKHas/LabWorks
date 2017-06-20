@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="quiz.css" media="screen" title="no title" charset="utf-8">
+    <meta charset="utf-8">
+    <title>Questions</title>
+    <header>
+      <h4>Questions</h4>
+    </header>
+  </head>
+  <body>
+    <div>
+      <p class="information">
+        <span id="Name"></span>
+        <span id="LastName"></span><br>
+        <span id="ID"></span>
+        <script type='text/javascript'>
+        document.getElementById('Name').innerHTML = sessionStorage.getItem('StuName');
+        document.getElementById('LastName').innerHTML = sessionStorage.getItem('StuLastName');
+        document.getElementById('ID').innerHTML = sessionStorage.getItem('StuNum');
+        </script>
+      </p>
+    </div>
+    <form class="quiz" method="post" onsubmit="return Answer()">
+      <div class="q" id="q1">
+        <p class="q">
+          1. How if statement is written in Javascript?
+        </p>
+        <ul>
+          <li><input type="radio" name="question1" value="A" id="q1a">if (N == 5)</input></li><br/>
+          <li><input type="radio" name="question1" value="B" id="q1b">if (N = 5)</input></li><br/>
+          <li><input type="radio" name="question1" value="C" id="q1c">if N == 5</input></li><br/>
+          <li><input type="radio" name="question1" value="D" id="q1d">if N = 5</input></li><br/>
+        </ul>
+      </div>
+      <div class="q" id="q2">
+        <p class="q">
+          2. How a value of element is called by ID?
+        </p>
+        <ul>
+          <li><input type="radio" name="question2" value="A" id="q2a">getElementById("ElementID").value</input></li><br/>
+          <li><input type="radio" name="question2" value="B" id="q2b">getElementById("ElementID")</input></li><br/>
+          <li><input type="radio" name="question2" value="C" id="q2c">value.document.getElementById("ElementID")</input></li><br/>
+          <li><input type="radio" name="question2" value="D" id="q2d">document.getElementById("ElementID").value</input></li><br/>
+        </ul>
+      </div>
+      <div class="q" id="q3">
+        <p class="q">
+          3. How an array is created in Javascript?
+        </p>
+        <ul>
+          <li><input type="radio" name="question3" value="A" id="q3a">var Names = "Serdar", "Ayberk", "Hande"</input></li><br/>
+          <li><input type="radio" name="question3" value="B" id="q3b">var Names = ("Serdar", "Ayberk", "Hande")</input></li><br/>
+          <li><input type="radio" name="question3" value="C" id="q3c">var Names = ["Serdar", "Ayberk", "Hande"]</input></li><br/>
+        </ul>
+      </div>
+      <div class="q" id="q4">
+        <p class="q">
+          4. Java and Javascript are diffrent languages.
+        </p>
+        <ul>
+          <li><input type="checkbox" name="question4" value="A" id="q4a">True</input></li><br/>
+          <li><input type="checkbox" name="question4" value="B" id="q4b">False</input></li><br/>
+        </ul>
+      </div>
+      <div class="q" id="q5">
+        <p class="q">
+          5. Which operators are increment and decrement operators?
+        </p>
+        <ul>
+          <li><input type="checkbox" name="question5" value="A" id="q5a">++</input></li><br/>
+          <li><input type="checkbox" name="question5" value="B" id="q5b">+</input></li><br/>
+          <li><input type="checkbox" name="question5" value="C" id="q5c">--</input></li><br/>
+          <li><input type="checkbox" name="question5" value="D" id="q5d">-</input></li><br/>
+        </ul>
+      </div>
+      <div class="q" id="q6">
+        <p class="q">
+          6. Which codes are send data and get data?
+        </p>
+        <ul>
+          <li><input type="checkbox" name="question6" value="A" id="q6a">sessionStorage.getItem('Answer6');</input></li><br/>
+          <li><input type="checkbox" name="question6" value="B" id="q6b">sessionStorage.getID('Answer6');</input></li><br/>
+          <li><input type="checkbox" name="question6" value="C" id="q6c">sessionStorage.setID("Answer6", Answer6);</input></li><br/>
+          <li><input type="checkbox" name="question6" value="D" id="q6d">sessionStorage.setItem("Answer6", Answer6);</input></li><br/>
+        </ul>
+      </div>
+      <div class="q" id="q7">
+        <p class="q">
+          7. Which operator is assignment operator?
+        </p>
+        <ul>
+        <select id="Selected7">
+          <option name="question7" value="A" id="q7a">+</option>
+          <option name="question7" value="B" id="q7b">=</option>
+          <option name="question7" value="C" id="q7c">==</option>
+          <option name="question7" value="D" id="q7d">=+</option>
+        </select>
+        </ul>
+      </div>
+      <div class="q" id="q8">
+        <p class="q">
+          8. How function is called?
+        </p>
+        <ul>
+        <select id="Selected8">
+          <option name="question8" value="A" id="q8a">myFunction()</option>
+          <option name="question8" value="B" id="q8b">call myFunction()</option>
+          <option name="question8" value="C" id="q8c">function myFunction()</option>
+          <option name="question8" value="D" id="q8d">run myFunction()</option>
+        </select>
+        </ul>
+      </div>
+      <div class="q" id="q9">
+        <p class="q">
+          9. Which one is the true function syntax?
+        </p>
+        <ul>
+          <li><input type="radio" name="question9" value="A" id="q9a">function = myFunction()</input></li><br/>
+          <li><input type="radio" name="question9" value="B" id="q9b">function; myFunction()</input></li><br/>
+          <li><input type="radio" name="question9" value="C" id="q9c">function myFunction()</input></li><br/>
+          <li><input type="radio" name="question9" value="D" id="q9d">function myFunction;</input></li><br/>
+        </ul>
+      </div>
+      <div class="q" id="q10">
+        <p class="q">
+          10. Where javascript code is written?
+        </p>
+        <ul>
+          <li><input type="radio" name="question10" value="A" id="q10a">inside &lt;script&gt;&lt;/script&gt;</input></li><br/>
+          <li><input type="radio" name="question10" value="B" id="q10b">inside &lt;javascript&gt;&lt;/javascript&gt;</input></li><br/>
+          <li><input type="radio" name="question10" value="C" id="q10c">inside &lt;scriptcode&gt;&lt;/scriptcode&gt;</input></li><br/>
+          <li><input type="radio" name="question10" value="D" id="q10d">inside &lt;js&gt;&lt;/js&gt;</input></li><br/>
+        </ul>
+      </div>
+      <input type="submit" name="submit" value="Submit answers" class="submit">
+    </form>
+    <script type="text/javascript">
+      function Answer(){
+          savedataQ1();
+          savedataQ2();
+          savedataQ3();
+          savedataQ4chk();
+          savedataQ5chk();
+          savedataQ6chk();
+          savedataQ7slct();
+          savedataQ8slct();
+          savedataQ9();
+          savedataQ10();
+          location = 'answers.html';
+          return false
+        }
+      function savedataQ1(){
+        if (document.getElementById("q1a").checked) {
+          Answer1 = document.getElementById('q1a').value;
+        }
+        else if (document.getElementById("q1b").checked) {
+          Answer1 = document.getElementById('q1b').value;
+        }
+        else if (document.getElementById("q1c").checked) {
+          Answer1 = document.getElementById('q1c').value;
+        }
+        else if (document.getElementById("q1d").checked) {
+          Answer1 = document.getElementById('q1d').value;
+        }
+        else {
+          Answer1 = ("Not answered")
+        }
+        sessionStorage.setItem("Answer1", Answer1);
+      }
+      function savedataQ2(){
+        if (document.getElementById("q2a").checked) {
+          Answer2 = document.getElementById('q2a').value;
+        }
+        else if (document.getElementById("q2b").checked) {
+          Answer2 = document.getElementById('q2b').value;
+        }
+        else if (document.getElementById("q2c").checked) {
+          Answer2 = document.getElementById('q2c').value;
+        }
+        else if (document.getElementById("q2d").checked) {
+          Answer2 = document.getElementById('q2d').value;
+        }
+        else {
+          Answer2 = ("Not answered")
+        }
+        sessionStorage.setItem("Answer2", Answer2);
+      }
+      function savedataQ3(){
+        if (document.getElementById("q3a").checked) {
+          Answer3 = document.getElementById('q3a').value;
+        }
+        else if (document.getElementById("q3b").checked) {
+          Answer3 = document.getElementById('q3b').value;
+        }
+        else if (document.getElementById("q3c").checked) {
+          Answer3 = document.getElementById('q3c').value;
+        }
+        else {
+          Answer3 = ("Not answered")
+        }
+        sessionStorage.setItem("Answer3", Answer3);
+      }
+      function savedataQ4chk() {
+        var Answer4 = [];
+        var inputElements = document.getElementsByName('question4');
+        for(var i=0; inputElements[i]; ++i){
+          if(inputElements[i].checked){
+            Answer4.push(inputElements[i].value);
+          }
+        }
+        if(Answer4.length == 0){
+          Answer4.push("Not Answered");
+        }
+        sessionStorage.setItem("Answer4", Answer4);
+      }
+      function savedataQ5chk() {
+        var Answer5 = [];
+        var inputElements = document.getElementsByName('question5');
+        for(var i=0; inputElements[i]; ++i){
+          if(inputElements[i].checked){
+            Answer5.push(inputElements[i].value);
+          }
+        }
+        if(Answer5.length == 0){
+          Answer5.push("Not Answered");
+        }
+        sessionStorage.setItem("Answer5", Answer5);
+      }
+      function savedataQ6chk() {
+        var Answer6 = [];
+        var inputElements = document.getElementsByName('question6');
+        for(var i=0; inputElements[i]; ++i){
+          if(inputElements[i].checked){
+            Answer6.push(inputElements[i].value);
+          }
+        }
+        if(Answer6.length == 0){
+          Answer6.push("Not Answered");
+        }
+        sessionStorage.setItem("Answer6", Answer6);
+      }
+      function savedataQ7slct() {
+        var Answer7 = document.getElementById("Selected7");
+        sessionStorage.setItem("Answer7", Answer7.value);
+      }
+      function savedataQ8slct() {
+        var Answer8 = document.getElementById("Selected8");
+        sessionStorage.setItem("Answer8", Answer8.value);
+      }
+      function savedataQ9(){
+        if (document.getElementById("q9a").checked) {
+          Answer9 = document.getElementById('q9a').value;
+        }
+        else if (document.getElementById("q9b").checked) {
+          Answer9 = document.getElementById('q9b').value;
+        }
+        else if (document.getElementById("q9c").checked) {
+          Answer9 = document.getElementById('q9c').value;
+        }
+        else if (document.getElementById("q9d").checked) {
+          Answer9 = document.getElementById('q9d').value;
+        }
+        else {
+          Answer9 = ("Not answered")
+        }
+        sessionStorage.setItem("Answer9", Answer9);
+      }
+      function savedataQ10(){
+        if (document.getElementById("q10a").checked) {
+          Answer10 = document.getElementById('q10a').value;
+        }
+        else if (document.getElementById("q10b").checked) {
+          Answer10 = document.getElementById('q10b').value;
+        }
+        else if (document.getElementById("q10c").checked) {
+          Answer10 = document.getElementById('q10c').value;
+        }
+        else if (document.getElementById("q10d").checked) {
+          Answer10 = document.getElementById('q10d').value;
+        }
+        else {
+          Answer10 = ("Not answered")
+        }
+        sessionStorage.setItem("Answer10", Answer10);
+      }
+    </script>
+  </body>
+</html>

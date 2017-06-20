@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <h1> 	Question 5 </h1>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+  table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    background-repeat: no-repeat;
+  }
+  body {
+    background-color: #FAF0E6;
+  }
+  /* remove padding */
+  td, th {
+    padding: 0;
+    width: 120px; height: 160px;
+  }
+  div {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 1px solid #CCCCCC;
+    width: 120px; height: 160px; background: #FFFFFF;
+  }
+  </style>
+</head>
+<body>
+  <table style="background-image: url(&quot;http://pixel.nymag.com/imgs/daily/vulture/2015/03/13/recaps/13-last-man-on-earth.w750.h560.2x.jpg&quot;);">
+    <tr>
+      <td id="t1">
+        <div id="d1"></div>
+      </td>
+      <td id="t2">
+        <div id="d2"></div>
+      </td>
+      <td id="t3">
+        <div id="d3"></div>
+      </td>
+      <td id="t4">
+        <div id="d4"></div>
+      </td>
+    </tr>
+    <tr>
+      <td id="t5">
+        <div id="d5"></div>
+      </td>
+      <td id="t6">
+        <div id="d6"></div>
+      </td>
+      <td id="t7">
+        <div id="d7"></div>
+      </td>
+      <td id="t8">
+        <div id="d8"></div>
+      </td>
+    </tr>
+    <tr>
+      <td id="t9">
+        <div id="d9"></div>
+      </td>
+      <td id="t10">
+        <div id="d10"></div>
+      </td>
+      <td id="t11">
+        <div id="d11"></div>
+      </td>
+      <td id="t12">
+        <div id="d12"></div>
+      </td>
+    </tr>
+  </table>
+  <h1><input type="text" style="background-color:#FFA500; font-weight:bold; text-align:center; border:none" id="counter" value="12" readonly ></h1>
+
+  <ul id="Q5">
+    <p>5. Which TV show ? </p>
+    <input type="radio" name="q5" value="a" id="q5a"><label for="q5a">The Big Bang Theory</label><br/>
+    <input type="radio" name="q5" value="b" id="q5b"><label for="q5b">The Last Man On Earth</label><br/>
+    <input type="radio" name="q5" value="c" id="q5c"><label for="q5c">How I Met Your Mother</label><br/>
+    <input type="radio" name="q5" value="d" id="q5d"><label for="q5d">Friends</label><br/>
+  </ul>
+
+
+  <button onclick="return next_page()">See your results</button>
+
+</body>
+</html>
+
+<script type="text/javascript">
+sum = sessionStorage.getItem('sum');
+//doğru şık
+tAns = "b"
+//eksiltici
+function modify_qty(val) {
+  var qty = document.getElementById('counter').value;
+  var new_qty = parseInt(qty,10) + val;
+  if (new_qty < 0) {
+    new_qty = 0;
+  }
+  document.getElementById('counter').value = new_qty;
+  return new_qty;
+}
+
+function save_data(tAns, sum){
+  userAnswer = $("#Q5 input[type='radio']:checked");
+  score = document.getElementById('counter').value;
+  score = parseInt(score,10);
+  sum = parseInt(sum,10);
+  if (tAns==userAnswer.val()) {
+    sum+=score
+    sessionStorage.setItem("sum", sum);
+  }
+  else {
+    sessionStorage.setItem("sum", sum);
+  }
+  console.log(sum);
+}
+
+function next_page(){
+  save_data(tAns, sum);
+  location = 'results.html';
+  return false
+}
+/*
+$("#tx").click(function(){            (basılan html elementine göre aşağıdaki kodu çalıştırıyor)
+if ($("#dx").is(":visible")) {  (daha önce div elementi gizlenmiş mi kontrol ediyor)
+modify_qty(-1);                 (fonksiyon çalıştırarak değer düşüyor)
+}
+$("#dx").hide();                    (id'si girili div elementini hide ediyor)
+});
+*/
+$("#t1").click(function(){
+  if ($("#d1").is(":visible")) {
+    modify_qty(-1);
+  }
+  $("#d1").hide();
+});
+$("#t2").click(function(){
+  if ($("#d2").is(":visible")) {
+    modify_qty(-1);
+  }
+  $("#d2").hide();
+});
+$("#t3").click(function(){
+  if ($("#d3").is(":visible")) {
+    modify_qty(-1);
+  }
+  $("#d3").hide();
+});
+$("#t4").click(function(){
+  if ($("#d4").is(":visible")) {
+    modify_qty(-1);
+  }
+  $("#d4").hide();
+});
+$("#t5").click(function(){
+  if ($("#d5").is(":visible")) {
+    modify_qty(-1);
+  }
+  $("#d5").hide();
+});
+$("#t6").click(function(){
+  if ($("#d6").is(":visible")) {
+    modify_qty(-1);
+  }
+  $("#d6").hide();
+});
+$("#t7").click(function(){
+  if ($("#d7").is(":visible")) {
+    modify_qty(-1);
+  }
+  $("#d7").hide();
+});
+$("#t8").click(function(){
+  if ($("#d8").is(":visible")) {
+    modify_qty(-1);
+  }
+  $("#d8").hide();
+});
+$("#t9").click(function(){
+  if ($("#d9").is(":visible")) {
+    modify_qty(-1);
+  }
+  $("#d9").hide();
+});
+$("#t10").click(function(){
+  if ($("#d10").is(":visible")) {
+    modify_qty(-1);
+  }
+  $("#d10").hide();
+});
+$("#t11").click(function(){
+  if ($("#d11").is(":visible")) {
+    modify_qty(-1);
+  }
+  $("#d11").hide();
+});
+$("#t12").click(function(){
+  if ($("#d12").is(":visible")) {
+    modify_qty(-1);
+  }
+  $("#d12").hide();
+});
+</script>

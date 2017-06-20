@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <input type="text" id="highscore" value="8" readonly></input>
+  <input type="button" value="gönder" onclick="gonderMek()"></input>
+
+  <script>
+  function gonderMek(){
+    saveData();
+    location=("hadi.html");
+    return false;
+  }
+
+  function saveData(){
+    var score = document.getElementById("highscore").value;
+    if(score != null){
+      localStorage.setItem("score", score);
+    }
+  }
+  </script>
+</body>
+</html>

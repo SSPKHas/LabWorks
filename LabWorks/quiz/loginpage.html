@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="login.css" media="screen" title="no title" charset="utf-8">
+    <meta charset="utf-8">
+    <title>Quiz Login Page</title>
+    <header>
+      <h4>Login Page</h4>
+    </header>
+  </head>
+  <script type="text/javascript">
+    function SendData(){
+
+      var checkNameNull = NullData("StuName");
+      var checkNameChar = AlphaCharData("StuName");
+      var checkLastNameNull = NullData("StuLastName");
+      var checkLastNameChar = AlphaCharData("StuLastName");
+      var checkIDNull = NullData("StuNum");
+      var checkIDChar = NumericCharData("StuNum");
+      var checkIDLenght = LenghtData("StuNum", 11);
+
+      if (checkNameNull == true && checkNameChar == true && checkLastNameNull == true && checkLastNameChar == true && checkIDNull == true && checkIDChar == true && checkIDLenght == true) {
+        savedata();
+        location = 'quizpage.html';
+      }
+      else {
+        document.getElementById("LoginForm").reset();
+      }
+      return false
+    }
+
+    function NullData(data){
+      var element = document.getElementById(data);
+      var dataName = document.getElementById(data).getAttribute("name");
+      if (element == null || element.value == "") {
+        alert("Field " + dataName + " is blank");
+        return false
+      }
+      else {
+        return true
+      }
+    }
+    function AlphaCharData(data){
+      var element = document.getElementById(data);
+      var dataName = document.getElementById(data).getAttribute("name");
+      if (/[^a-zA-Z? ]/.test(element.value)) {
+        alert("Fied " + dataName + " is not Alphabetic");
+        return false
+      }
+      else {
+        return true
+      }
+    }
+    function NumericCharData(data){
+      var element = document.getElementById(data);
+      var dataName = document.getElementById(data).getAttribute("name");
+      if (/[^0-9]/.test(element.value)) {
+        alert("Fied " + dataName + " is not Numeric");
+        return false
+      }
+      else {
+        return true
+      }
+    }
+    function LenghtData(data, len){
+      var element = document.getElementById(data);
+      var dataName = document.getElementById(data).getAttribute("name");
+      if (element.value.length != len) {
+        alert("Fied " + dataName + " should be " + len + " digit. " +"Like= 20121708007");
+        return false
+      }
+      else {
+        return true
+      }
+    }
+
+    function savedata(){
+      var StuNum = document.getElementById("StuNum");
+      var StuName = document.getElementById("StuName");
+      var StuLastName = document.getElementById("StuLastName");
+      sessionStorage.setItem("StuNum", StuNum.value);
+   	  sessionStorage.setItem("StuName", StuName.value);
+   	  sessionStorage.setItem("StuLastName", StuLastName.value);
+    }
+
+  </script>
+  <body>
+    <form id="LoginForm" method="post" onsubmit="return SendData()">
+      <table>
+        <tr>
+          <td>Student Name: </td>
+          <td><input type="text" name="name" id="StuName"></td>
+        </tr>
+        <tr>
+          <td>Student Lastname: </td>
+          <td><input type="text" name="lastname" id="StuLastName"></td>
+        </tr>
+        <tr>
+          <td>Student ID: </td>
+          <td><input type="text" name="ID" id="StuNum"></td>
+        </tr>
+      </table>
+      <div class="button">
+        <input type="submit" name="submit" value="Submit">
+      </div>
+    </form>
+  </body>
+</html>

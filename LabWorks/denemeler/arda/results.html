@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <span id="Sonuc"></span>
+  </body>
+</html>
+
+<script type="text/javascript">
+  sum = parseInt(sessionStorage.getItem('sum'),10);
+  if (sum>48 && sum<=60) {
+    document.getElementById('Sonuc').innerHTML = "Çok zekisiniz hocam, maşallah: " + sum;
+  }
+  else if (sum>36 && sum<=60) {
+    document.getElementById('Sonuc').innerHTML = "Olur öyle bir hata hocam, maşallah: " + sum;
+  }
+  else if (sum>24 && sum<=60) {
+    document.getElementById('Sonuc').innerHTML = "Dikkatiniz dağınıktı galiba hocam, olur öyle: " + sum;
+  }
+  else if (sum>12 && sum<=60) {
+    document.getElementById('Sonuc').innerHTML = "Tebrikler elendiniz! : " + sum;
+  }
+  else if (sum>0 && sum<=60) {
+    document.getElementById('Sonuc').innerHTML = "Biraz aptallık var galiba hocam, olur öyle: " + sum;
+  }
+  else if (sum==0 && sum<=60) {
+    document.getElementById('Sonuc').innerHTML = "Moron: " + sum;
+  }
+  else {
+    document.getElementById('Sonuc').innerHTML = "Bir bok yedin puanla ilgili galiba: " + sum;
+  }
+  /*
+  switch (sum) {
+    case 60:
+      document.getElementById('Sonuc').innerHTML = "Çok zekisiniz hocam, maşallah: " + sum;
+      break;
+    case 48:
+      document.getElementById('Sonuc').innerHTML = "Olur öyle bir hata hocam, maşallah: " + sum;
+      break;
+    case 36:
+      document.getElementById('Sonuc').innerHTML = "Dikkatiniz dağınıktı galiba hocam, olur öyle: " + sum;
+      break;
+    case 24:
+      document.getElementById('Sonuc').innerHTML = "Tebrikler elendiniz! : " + sum;
+      break;
+    case 12:
+      document.getElementById('Sonuc').innerHTML = "Biraz aptallık var galiba hocam, olur öyle: " + sum;
+      break;
+    case 0:
+      document.getElementById('Sonuc').innerHTML = "Moron: " + sum;
+      break;
+    default:
+  }
+  */
+</script>
