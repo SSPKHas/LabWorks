@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="" method="post">
+      <input id="succeedCredit" type="number" name="" value="" placeholder="Başarılan Kredi">
+      <input id="totalCredit" type="number" name="" value="" placeholder="Toplam Kredi">
+      <input id="gradeAvg" type="number" name="" value="" placeholder="Şu anki not ortalaması">
+      <input id="desiredGrade" type="text" name="" value="" placeholder="İstenen not ortalaması">
+      <button id="button" onclick="return notHesapla()" type="button" name="button">Hesapla</button>
+    </form>
+    <div id="mesaj" class="">
+
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+  function notHesapla() {
+    var succeedCredit = document.getElementById('succeedCredit').value;
+    var totalCredit = document.getElementById('totalCredit').value;
+    var gradeAvg = document.getElementById('gradeAvg').value;
+    var desiredGrade = document.getElementById('desiredGrade').value;
+    var leftCredit = parseFloat(totalCredit) - parseFloat(succeedCredit);
+    var expectedGrade = ((parseFloat(desiredGrade) * parseFloat(totalCredit)) - (parseFloat(succeedCredit) * parseFloat(gradeAvg)))  / (parseFloat(totalCredit) - parseFloat(succeedCredit));
+    console.log(expectedGrade);
+    var h5 = "İstenen " + desiredGrade + " ortalamaya ulaşmak için kalan " + leftCredit + " kredide " + expectedGrade.toFixed(2) + " not ortalaması yapılması gerekmektedir."
+    console.log(h5);
+    element = document.createElement("h4");
+    element.innerHTML = h5;
+    document.getElementById('mesaj').appendChild(element)
+    return expectedGrade;
+
+  }
+</script>
